@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ポートフォリオ｜UI/UX・イラストデザイナー</title>
+<meta name="description" content="UI/UXデザイン、イラスト、グラフィックを手がけるデザイナーのポートフォリオ。人にやさしく、あたたかいデザインを大切にしています。" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="ポートフォリオ｜UI/UX・イラストデザイナー" />
+<meta property="og:description" content="人にやさしく、あたたかいデザインを。UI/UX・イラスト・グラフィックのポートフォリオ。" />
+<meta property="og:type" content="website" />
+
+<!-- Fonts: rounded & friendly (LITALICO-like) + handwritten doodle accent -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Yomogi&family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="assets/css/style.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>" />
+</head>
+<body>
+
+<!-- ===================== Decorative doodles (SVG sprite) ===================== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="d-squiggle" viewBox="0 0 120 24">
+      <path d="M2 12C12 2 22 22 32 12s20-10 30 0 20 10 30 0 20-10 26-4" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="d-star" viewBox="0 0 40 40">
+      <path d="M20 2l3.6 10.8L35 13l-9 7.4 3.4 11.6L20 25l-9.4 7 3.4-11.6L5 13l11.4-.2z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="d-spark" viewBox="0 0 40 40">
+      <path d="M20 2c1 9 7 16 16 18-9 2-15 8-16 18-1-10-7-16-16-18 9-2 15-9 16-18z" fill="currentColor"/>
+    </symbol>
+    <symbol id="d-arrow" viewBox="0 0 80 40">
+      <path d="M4 22c18 8 40 8 58-2" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+      <path d="M50 8c6 5 10 8 14 10-5 2-9 6-12 12" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="d-circle" viewBox="0 0 120 120">
+      <path d="M60 8c34 2 52 22 52 52 0 26-26 52-58 52S2 90 6 56 24 8 60 8z" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="d-underline" viewBox="0 0 200 16">
+      <path d="M4 9c40-7 120-7 192 1" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="d-heart" viewBox="0 0 40 40">
+      <path d="M20 34C8 26 4 18 4 12 4 7 8 4 12 4c3 0 6 2 8 5 2-3 5-5 8-5 4 0 8 3 8 8 0 6-4 14-16 22z" fill="currentColor"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ===================== Header / Nav ===================== -->
+<header class="site-header" id="top">
+  <a href="#top" class="logo">
+    <span class="logo-mark" aria-hidden="true">
+      <svg viewBox="0 0 44 44"><use href="#d-spark"/></svg>
+    </span>
+    <span class="logo-text">YOUR&nbsp;NAME<small>ポートフォリオ</small></span>
+  </a>
+
+  <nav class="nav" aria-label="メインナビゲーション">
+    <a href="#works">作品</a>
+    <a href="#about">私について</a>
+    <a href="#contact">お問い合わせ</a>
+  </nav>
+
+  <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main>
+
+<!-- ===================== Hero ===================== -->
+<section class="hero" id="hero">
+  <div class="hero-doodles" aria-hidden="true">
+    <svg class="dd dd-star1"><use href="#d-star"/></svg>
+    <svg class="dd dd-spark1"><use href="#d-spark"/></svg>
+    <svg class="dd dd-squiggle1"><use href="#d-squiggle"/></svg>
+    <svg class="dd dd-circle1"><use href="#d-circle"/></svg>
+    <svg class="dd dd-heart1"><use href="#d-heart"/></svg>
+  </div>
+
+  <div class="hero-inner">
+    <p class="hero-kicker reveal">Hello! はじめまして <svg class="ic"><use href="#d-spark"/></svg></p>
+    <h1 class="hero-title reveal">
+      人にやさしく、<br />
+      <span class="hl">ちょっと楽しい</span><br />
+      デザインを。
+    </h1>
+    <p class="hero-lead reveal">
+      UI/UX・イラスト・グラフィックを横断するデザイナーです。<br class="pc-only"/>
+      使う人の「できた！」がうれしくなる体験づくりを大切にしています。
+    </p>
+    <div class="hero-cta reveal">
+      <a href="#works" class="btn btn-primary">作品を見る</a>
+      <a href="#contact" class="btn btn-ghost">お問い合わせ</a>
+    </div>
+
+    <ul class="hero-stats reveal" aria-label="制作領域">
+      <li><b>UI/UX</b><span>システム設計</span></li>
+      <li><b>Illustration</b><span>イラスト制作</span></li>
+      <li><b>Graphic</b><span>大学時代の作品</span></li>
+    </ul>
+  </div>
+
+  <a href="#works" class="scroll-hint" aria-hidden="true">
+    <span>Scroll</span>
+    <svg class="ic"><use href="#d-arrow"/></svg>
+  </a>
+</section>
+
+<!-- ===================== Works ===================== -->
+<section class="section works" id="works">
+  <div class="section-head">
+    <p class="eyebrow"><svg class="ic"><use href="#d-spark"/></svg> Works</p>
+    <h2 class="section-title">わたしの<span class="ul">作品</span></h2>
+    <p class="section-sub">3つのカテゴリーで制作の幅をご紹介します。気になるタブをクリックしてみてください。</p>
+  </div>
+
+  <!-- Category tabs -->
+  <div class="filters" role="tablist" aria-label="作品カテゴリー">
+    <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">すべて</button>
+    <button class="filter" data-filter="uiux" role="tab" aria-selected="false">UI/UX システム</button>
+    <button class="filter" data-filter="illust" role="tab" aria-selected="false">イラスト</button>
+    <button class="filter" data-filter="grad" role="tab" aria-selected="false">大学時代のデザイン</button>
+  </div>
+
+  <!-- ===== Module 1: UI/UX Systems ===== -->
+  <div class="module" data-group="uiux">
+    <div class="module-head">
+      <h3 class="module-title"><span class="badge badge-coral">01</span> UI/UX システム</h3>
+      <p class="module-desc">課題発見から設計・検証まで。3つのプロダクトのデザインシステムです。</p>
+    </div>
+
+    <div class="grid grid-3">
+      <!-- card -->
+      <article class="card work-card" data-cat="uiux" tabindex="0">
+        <div class="thumb thumb-app">
+          <svg class="mock" viewBox="0 0 320 240" role="img" aria-label="家計簿アプリのUIモックアップ">
+            <rect width="320" height="240" rx="18" fill="#FFE9DF"/>
+            <rect x="20" y="22" width="150" height="14" rx="7" fill="#FF6B4A"/>
+            <rect x="20" y="46" width="90" height="10" rx="5" fill="#FFB59E"/>
+            <rect x="20" y="78" width="280" height="64" rx="14" fill="#fff"/>
+            <circle cx="52" cy="110" r="20" fill="#FFC93C"/>
+            <rect x="84" y="96" width="120" height="12" rx="6" fill="#2B2622"/>
+            <rect x="84" y="116" width="80" height="10" rx="5" fill="#C9C2BB"/>
+            <rect x="20" y="158" width="135" height="62" rx="14" fill="#2BB6A3"/>
+            <rect x="167" y="158" width="133" height="62" rx="14" fill="#4FA8E0"/>
+          </svg>
+          <span class="tag-float">App</span>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">かけいぼ — 家計簿アプリ</h4>
+          <p class="card-text">「続けられない」を解決する、入力3秒の家計簿。情報設計とマイクロインタラクションを担当。</p>
+          <ul class="chips"><li>UX設計</li><li>UIデザイン</li><li>プロトタイプ</li></ul>
+        </div>
+      </article>
+
+      <article class="card work-card" data-cat="uiux" tabindex="0">
+        <div class="thumb thumb-app alt">
+          <svg class="mock" viewBox="0 0 320 240" role="img" aria-label="学習支援サービスのUIモックアップ">
+            <rect width="320" height="240" rx="18" fill="#E4F4F1"/>
+            <rect x="20" y="22" width="180" height="14" rx="7" fill="#2BB6A3"/>
+            <circle cx="284" cy="34" r="16" fill="#FFC93C"/>
+            <rect x="20" y="64" width="280" height="44" rx="12" fill="#fff"/>
+            <rect x="34" y="80" width="200" height="12" rx="6" fill="#2B2622"/>
+            <rect x="20" y="120" width="280" height="44" rx="12" fill="#fff"/>
+            <rect x="34" y="136" width="160" height="12" rx="6" fill="#2B2622"/>
+            <rect x="20" y="176" width="280" height="44" rx="12" fill="#FF8FB1"/>
+            <rect x="34" y="192" width="120" height="12" rx="6" fill="#fff"/>
+          </svg>
+          <span class="tag-float">Web</span>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">まなびダッシュボード</h4>
+          <p class="card-text">学習支援サービスの管理画面。複雑な情報を「迷わない」構造へ。アクセシビリティを重視。</p>
+          <ul class="chips"><li>情報設計</li><li>デザインシステム</li><li>A11y</li></ul>
+        </div>
+      </article>
+
+      <article class="card work-card" data-cat="uiux" tabindex="0">
+        <div class="thumb thumb-app alt2">
+          <svg class="mock" viewBox="0 0 320 240" role="img" aria-label="予約アプリのUIモックアップ">
+            <rect width="320" height="240" rx="18" fill="#EAF1FB"/>
+            <rect x="20" y="22" width="120" height="14" rx="7" fill="#4FA8E0"/>
+            <rect x="20" y="56" width="280" height="120" rx="14" fill="#fff"/>
+            <rect x="36" y="74" width="40" height="40" rx="20" fill="#FFC93C"/>
+            <rect x="88" y="80" width="120" height="12" rx="6" fill="#2B2622"/>
+            <rect x="88" y="100" width="80" height="10" rx="5" fill="#C9C2BB"/>
+            <rect x="36" y="128" width="40" height="40" rx="20" fill="#FF8FB1"/>
+            <rect x="88" y="134" width="140" height="12" rx="6" fill="#2B2622"/>
+            <rect x="88" y="154" width="70" height="10" rx="5" fill="#C9C2BB"/>
+            <rect x="20" y="190" width="280" height="34" rx="17" fill="#FF6B4A"/>
+          </svg>
+          <span class="tag-float">App</span>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">よやくナビ — 予約アプリ</h4>
+          <p class="card-text">福祉施設向けの予約システム。誰にとっても使いやすいUIをめざし、ユーザーテストを反復。</p>
+          <ul class="chips"><li>ユーザー調査</li><li>UIデザイン</li><li>検証</li></ul>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <!-- ===== Module 2: Illustrations ===== -->
+  <div class="module" data-group="illust">
+    <div class="module-head">
+      <h3 class="module-title"><span class="badge badge-yellow">02</span> イラスト</h3>
+      <p class="module-desc">あたたかい世界観を大切にした、オリジナルイラスト集です。</p>
+    </div>
+
+    <div class="grid grid-illust">
+      <article class="card illust-card" data-cat="illust" tabindex="0" style="--c1:#FFD98E;--c2:#FF9E6D">
+        <div class="illust-art"><svg viewBox="0 0 200 200"><use href="#d-spark"/></svg><span class="emoji">🌱</span></div>
+        <p class="illust-cap">芽吹き / Sprout</p>
+      </article>
+      <article class="card illust-card" data-cat="illust" tabindex="0" style="--c1:#9BD7CE;--c2:#2BB6A3">
+        <div class="illust-art"><span class="emoji">🐳</span></div>
+        <p class="illust-cap">海の散歩 / Whale Walk</p>
+      </article>
+      <article class="card illust-card" data-cat="illust" tabindex="0" style="--c1:#FFB7CE;--c2:#FF7AA2">
+        <div class="illust-art"><span class="emoji">🍓</span></div>
+        <p class="illust-cap">いちごの朝 / Berry Morning</p>
+      </article>
+      <article class="card illust-card" data-cat="illust" tabindex="0" style="--c1:#B9D2F7;--c2:#4FA8E0">
+        <div class="illust-art"><span class="emoji">🌙</span></div>
+        <p class="illust-cap">おやすみ / Goodnight</p>
+      </article>
+      <article class="card illust-card" data-cat="illust" tabindex="0" style="--c1:#FFE08A;--c2:#FFC93C">
+        <div class="illust-art"><span class="emoji">🐤</span></div>
+        <p class="illust-cap">はじめの一歩 / First Step</p>
+      </article>
+      <article class="card illust-card" data-cat="illust" tabindex="0" style="--c1:#D7C4F2;--c2:#9B7BE0">
+        <div class="illust-art"><span class="emoji">🎈</span></div>
+        <p class="illust-cap">ふうせん / Balloon</p>
+      </article>
+    </div>
+  </div>
+
+  <!-- ===== Module 3: University / Graphic ===== -->
+  <div class="module" data-group="grad">
+    <div class="module-head">
+      <h3 class="module-title"><span class="badge badge-teal">03</span> 大学時代のデザイン</h3>
+      <p class="module-desc">グラフィック・タイポグラフィ・ブランディングなど、学生時代の制作物です。</p>
+    </div>
+
+    <div class="grid grid-3">
+      <article class="card work-card" data-cat="grad" tabindex="0">
+        <div class="thumb thumb-poster p1">
+          <svg class="mock" viewBox="0 0 240 320" role="img" aria-label="音楽祭のポスター">
+            <rect width="240" height="320" rx="14" fill="#2B2622"/>
+            <circle cx="120" cy="120" r="64" fill="#FF6B4A"/>
+            <circle cx="120" cy="120" r="40" fill="#FFC93C"/>
+            <rect x="28" y="214" width="184" height="20" rx="6" fill="#fff"/>
+            <rect x="28" y="244" width="120" height="14" rx="6" fill="#9C958E"/>
+            <rect x="28" y="270" width="80" height="14" rx="6" fill="#2BB6A3"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">音楽祭 ポスター</h4>
+          <p class="card-text">学園祭のメインビジュアル。リズムを感じるタイポグラフィと配色を探求。</p>
+          <ul class="chips"><li>ポスター</li><li>タイポグラフィ</li></ul>
+        </div>
+      </article>
+
+      <article class="card work-card" data-cat="grad" tabindex="0">
+        <div class="thumb thumb-poster p2">
+          <svg class="mock" viewBox="0 0 240 320" role="img" aria-label="カフェのブランディング">
+            <rect width="240" height="320" rx="14" fill="#F3EAdd"/>
+            <circle cx="120" cy="110" r="56" fill="none" stroke="#7A5C3E" stroke-width="6"/>
+            <path d="M92 110h56M120 84v52" stroke="#7A5C3E" stroke-width="6" stroke-linecap="round"/>
+            <rect x="50" y="200" width="140" height="16" rx="8" fill="#7A5C3E"/>
+            <rect x="74" y="228" width="92" height="12" rx="6" fill="#B79B7D"/>
+            <rect x="40" y="266" width="160" height="30" rx="8" fill="#2BB6A3"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">cafe coco — VI</h4>
+          <p class="card-text">架空のカフェのブランディング。ロゴ・パッケージ・サインまで一貫設計。</p>
+          <ul class="chips"><li>ロゴ</li><li>ブランディング</li></ul>
+        </div>
+      </article>
+
+      <article class="card work-card" data-cat="grad" tabindex="0">
+        <div class="thumb thumb-poster p3">
+          <svg class="mock" viewBox="0 0 240 320" role="img" aria-label="写真集の装丁">
+            <rect width="240" height="320" rx="14" fill="#4FA8E0"/>
+            <rect x="36" y="40" width="168" height="120" rx="8" fill="#fff"/>
+            <rect x="52" y="56" width="136" height="74" rx="4" fill="#BFE0F5"/>
+            <circle cx="92" cy="92" r="14" fill="#FFC93C"/>
+            <path d="M52 130l40-30 34 24 30-22 32 28v-2H52z" fill="#2BB6A3"/>
+            <rect x="36" y="184" width="168" height="18" rx="6" fill="#fff"/>
+            <rect x="36" y="212" width="110" height="12" rx="6" fill="#BCE0F5"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">日々 — 写真集の装丁</h4>
+          <p class="card-text">卒業制作。何気ない日常をテーマにしたエディトリアルデザイン。</p>
+          <ul class="chips"><li>エディトリアル</li><li>装丁</li></ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== About ===================== -->
+<section class="section about" id="about">
+  <div class="section-head">
+    <p class="eyebrow"><svg class="ic"><use href="#d-heart"/></svg> About</p>
+    <h2 class="section-title">私に<span class="ul">ついて</span></h2>
+  </div>
+
+  <div class="about-grid">
+    <div class="about-intro reveal">
+      <div class="avatar" aria-hidden="true">
+        <svg viewBox="0 0 160 160">
+          <circle cx="80" cy="80" r="78" fill="#FFE9DF"/>
+          <circle cx="80" cy="68" r="34" fill="#FFC9A8"/>
+          <path d="M46 64c0-22 14-36 34-36s34 14 34 34c-10-6-22-8-34-8s-24 4-34 10z" fill="#6B4A36"/>
+          <circle cx="68" cy="70" r="4" fill="#2B2622"/><circle cx="92" cy="70" r="4" fill="#2B2622"/>
+          <path d="M70 84c6 5 14 5 20 0" fill="none" stroke="#2B2622" stroke-width="3" stroke-linecap="round"/>
+          <path d="M30 150c6-30 26-44 50-44s44 14 50 44z" fill="#2BB6A3"/>
+        </svg>
+        <svg class="avatar-deco"><use href="#d-circle"/></svg>
+      </div>
+      <h3 class="about-name">YOUR NAME <small>（お名前）</small></h3>
+      <p class="about-role">UI/UX・イラストデザイナー</p>
+      <p class="about-bio">
+        「人の毎日を、ほんの少しやさしくする」をテーマに活動しています。
+        体験設計からイラストまで、領域を横断してものづくりをするのが得意です。
+        LITALICOさんの「障害のない社会をつくる」という想いに強く共感し、
+        誰もが自分らしく過ごせるプロダクトづくりに携わりたいと考えています。
+      </p>
+      <ul class="about-likes">
+        <li><svg class="ic"><use href="#d-spark"/></svg> アクセシビリティ</li>
+        <li><svg class="ic"><use href="#d-spark"/></svg> やさしい言葉</li>
+        <li><svg class="ic"><use href="#d-spark"/></svg> 手描きの温度</li>
+      </ul>
+    </div>
+
+    <div class="about-timeline reveal">
+      <h3 class="timeline-title"><svg class="ic"><use href="#d-arrow"/></svg> 経歴 / Experience</h3>
+      <ol class="timeline">
+        <li>
+          <span class="dot" style="--dc:#FF6B4A"></span>
+          <p class="t-year">2024 — 現在</p>
+          <h4 class="t-role">UI/UXデザイナー <span>／ ○○株式会社</span></h4>
+          <p class="t-desc">自社プロダクトのデザインシステム構築と改善を担当。ユーザー調査から実装連携まで一貫して推進。</p>
+        </li>
+        <li>
+          <span class="dot" style="--dc:#FFC93C"></span>
+          <p class="t-year">2022 — 2024</p>
+          <h4 class="t-role">デザイナー <span>／ ○○デザイン事務所</span></h4>
+          <p class="t-desc">Web・アプリのUIデザイン、ロゴやイラスト制作を担当。クライアントワークで幅広い案件に対応。</p>
+        </li>
+        <li>
+          <span class="dot" style="--dc:#2BB6A3"></span>
+          <p class="t-year">2018 — 2022</p>
+          <h4 class="t-role">○○大学 デザイン学部 <span>／ 卒業</span></h4>
+          <p class="t-desc">グラフィックデザインを専攻。タイポグラフィ・ブランディング・編集デザインを学ぶ。</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== Contact ===================== -->
+<section class="section contact" id="contact">
+  <div class="contact-doodles" aria-hidden="true">
+    <svg class="dd dd-star2"><use href="#d-star"/></svg>
+    <svg class="dd dd-spark2"><use href="#d-spark"/></svg>
+    <svg class="dd dd-squiggle2"><use href="#d-squiggle"/></svg>
+  </div>
+
+  <div class="section-head">
+    <p class="eyebrow"><svg class="ic"><use href="#d-spark"/></svg> Contact</p>
+    <h2 class="section-title">お<span class="ul">問い合わせ</span></h2>
+    <p class="section-sub">お仕事のご相談・ポートフォリオの詳細など、お気軽にご連絡ください。</p>
+  </div>
+
+  <div class="contact-cards">
+    <a class="contact-card reveal" href="mailto:your.name@example.com">
+      <span class="cc-ic" style="--cc:#FF6B4A">✉️</span>
+      <span class="cc-label">メール / Email</span>
+      <span class="cc-value">your.name@example.com</span>
+      <span class="cc-go">送る <svg class="ic"><use href="#d-arrow"/></svg></span>
+    </a>
+
+    <a class="contact-card reveal" href="https://www.instagram.com/your_id" target="_blank" rel="noopener">
+      <span class="cc-ic" style="--cc:#FF8FB1">📷</span>
+      <span class="cc-label">Instagram / SNS</span>
+      <span class="cc-value">@your_id</span>
+      <span class="cc-go">見る <svg class="ic"><use href="#d-arrow"/></svg></span>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== Footer ===================== -->
+<footer class="site-footer">
+  <p class="foot-msg">最後まで見てくださって、ありがとうございました！ <svg class="ic"><use href="#d-heart"/></svg></p>
+  <p class="foot-copy">© <span id="year"></span> YOUR NAME — Portfolio. Designed &amp; coded with care.</p>
+  <a href="#top" class="to-top" aria-label="トップへ戻る">↑</a>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
