@@ -108,12 +108,9 @@ body::before{
 .hero-title .hl{position:relative;color:var(--coral);white-space:nowrap}
 .hero-title .hl::after{content:"";position:absolute;left:-2%;right:-2%;bottom:.08em;height:.32em;
   background:var(--yellow);z-index:-1;border-radius:8px;transform:rotate(-1.5deg)}
-/* colorful name — no underline bar, just multicolor text + delayed reveal */
+/* name — coral, no underline bar, delayed reveal */
 .hero-title .hl-name{
-  display:inline-block;letter-spacing:.03em;
-  background:linear-gradient(100deg,#FF6B4A 0%,#FF8FB1 26%,#FFC93C 50%,#2BB6A3 74%,#4FA8E0 100%);
-  -webkit-background-clip:text;background-clip:text;
-  -webkit-text-fill-color:transparent;color:transparent;
+  display:inline-block;letter-spacing:.03em;color:var(--coral);
   opacity:0;animation:nameIn 1.7s cubic-bezier(.2,.7,.2,1) 1.4s forwards;
 }
 @keyframes nameIn{from{opacity:0;transform:translateY(22px) rotate(-1.5deg)}to{opacity:1;transform:none}}
