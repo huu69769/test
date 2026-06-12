@@ -208,6 +208,24 @@ body::before{
 .chips li{font-size:.74rem;font-weight:700;padding:.2rem .65rem;border-radius:999px;
   background:var(--cream-2);border:1.5px solid var(--line)}
 
+/* UI/UX gallery — clean, gallery-style grouped grid */
+.gallery{display:flex;flex-direction:column;gap:2.8rem}
+.gp-head{display:flex;justify-content:space-between;align-items:baseline;gap:.8rem;flex-wrap:wrap;
+  border-bottom:2px dashed var(--line);padding-bottom:.7rem;margin-bottom:1.4rem}
+.gp-title{font-size:1.25rem;font-weight:900;display:flex;align-items:center;gap:.55rem}
+.gp-title::before{content:"";width:.72em;height:.72em;border-radius:50%;background:var(--ui,var(--coral))}
+.gp-meta{font-size:.85rem;color:var(--ink-soft);font-weight:700}
+.gp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.shot{margin:0;border-radius:14px;overflow:hidden;background:#fff;border:1px solid var(--line);
+  box-shadow:0 10px 22px -14px rgba(74,48,30,.55);transition:transform .22s ease, box-shadow .22s ease}
+.shot:hover{transform:translateY(-5px);box-shadow:0 18px 30px -14px rgba(74,48,30,.6)}
+.shot svg{width:100%;height:auto;display:block}
+.shot .ac{fill:var(--ui,var(--coral))}
+.shot .acs{stroke:var(--ui,var(--coral))}
+.shot figcaption{font-size:.8rem;font-weight:700;color:var(--ink-soft);padding:.55rem .8rem .65rem}
+@media (max-width:880px){.gp-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.gp-grid{gap:.6rem}}
+
 /* illustration cards */
 .illust-card{display:flex;flex-direction:column}
 .illust-art{aspect-ratio:1;display:grid;place-items:center;position:relative;
