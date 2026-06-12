@@ -8,6 +8,30 @@
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  /* ---- Hero name: typewriter reveal (left-to-right) ---- */
+  var nameEl = document.querySelector(".hl-name");
+  if (nameEl) {
+    var fullName = nameEl.textContent;
+    var reduceMotion =
+      window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!reduceMotion) {
+      nameEl.textContent = "";        // clear first so it doesn't flash
+      nameEl.classList.add("typing"); // show blinking caret
+      var idx = 0;
+      var START_DELAY = 1100;         // wait before typing begins
+      var SPEED = 130;                // ms per character
+      setTimeout(function tick() {
+        nameEl.textContent = fullName.slice(0, idx);
+        if (idx < fullName.length) {
+          idx++;
+          setTimeout(tick, SPEED);
+        } else {
+          setTimeout(function () { nameEl.classList.remove("typing"); }, 650);
+        }
+      }, START_DELAY);
+    }
+  }
+
   /* ---- Mobile nav toggle ---- */
   var toggle = document.querySelector(".nav-toggle");
   var nav = document.querySelector(".nav");
