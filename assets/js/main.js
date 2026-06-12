@@ -145,7 +145,9 @@
       lbMedia.innerHTML = "";
       if (src) lbMedia.appendChild(src.cloneNode(true));
       var c = fig.querySelector("figcaption");
-      lbCap.textContent = c ? c.textContent : "";
+      var capText = c && c.textContent.trim() ? c.textContent : "";
+      lbCap.textContent = capText;
+      lbCap.style.display = capText ? "" : "none";
       lbCount.textContent = cur + 1 + " / " + album.length;
       var proj = fig.closest(".gallery-project");
       var ui = proj ? getComputedStyle(proj).getPropertyValue("--ui").trim() : "";
