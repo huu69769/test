@@ -226,6 +226,9 @@ body::before{
 .shot:hover{transform:translateY(-5px);box-shadow:0 18px 30px -14px rgba(74,48,30,.6)}
 .shot svg{width:100%;height:auto;display:block}
 .shot img{width:100%;display:block;aspect-ratio:16/11;object-fit:cover;object-position:center top;background:#F4F1EC}
+/* wide horizontal shot (e.g. book cover spread) — spans full row */
+.shot-wide{grid-column:1 / -1}
+.shot-wide img{aspect-ratio:1000/360;object-position:center}
 .shot .ac{fill:var(--ui,var(--coral))}
 .shot .acs{stroke:var(--ui,var(--coral))}
 .shot figcaption{font-size:.8rem;font-weight:700;color:var(--ink-soft);padding:.55rem .8rem .65rem}
