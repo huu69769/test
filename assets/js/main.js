@@ -118,6 +118,52 @@
     sections.forEach(function (s) { spy.observe(s); });
   }
 
+  /* ---- Floating stars: gentle spring jiggle driven by scroll ---- */
+  var floaties = document.querySelectorAll(".floatie");
+  var prefersReduce =
+    window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (floaties.length && !prefersReduce) {
+    var stars = Array.prototype.map.call(floaties, function (el, i) {
+      var f = parseFloat(el.getAttribute("data-f")) || 1;
+      return {
+        el: el,
+        push: 0.12 * f,      // how hard scrolling shoves it
+        k: 0.010,            // spring stiffness (low = slow sway)
+        damp: 0.94,          // friction (high = settles slowly)
+        rotF: 0.45,          // tilt per offset
+        idleSpeed: 0.32 + 0.05 * i, // slow idle drift
+        idleAmp: 7 * f,
+        phase: i * 1.4,
+        off: 0,
+        vy: 0
+      };
+    });
+    var last = window.scrollY || window.pageYOffset;
+    function frame(now) {
+      var s = window.scrollY || window.pageYOffset;
+      var d = s - last;
+      last = s;
+      var t = now / 1000;
+      for (var i = 0; i < stars.length; i++) {
+        var it = stars[i];
+        it.vy += d * it.push;          // pushed by scroll movement
+        it.vy += -it.off * it.k;       // spring pulls back to rest
+        it.vy *= it.damp;              // friction
+        it.off += it.vy;
+        if (it.off > 130) it.off = 130;
+        else if (it.off < -130) it.off = -130;
+        var idleY = Math.sin(t * it.idleSpeed + it.phase) * it.idleAmp;
+        var idleX = Math.cos(t * it.idleSpeed * 0.8 + it.phase) * it.idleAmp * 0.6;
+        var rot = it.off * it.rotF + Math.sin(t * it.idleSpeed + it.phase) * 4;
+        it.el.style.transform =
+          "translate(" + idleX.toFixed(2) + "px," + (it.off + idleY).toFixed(2) +
+          "px) rotate(" + rot.toFixed(2) + "deg)";
+      }
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+
   /* ---- Lightbox: click a gallery shot to view it large ---- */
   var shots = Array.prototype.slice.call(document.querySelectorAll(".gp-grid .shot"));
   if (shots.length) {

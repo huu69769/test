@@ -56,6 +56,11 @@ body::before{
   background-size:26px 26px;
 }
 
+/* floating stars that jiggle as you scroll (bottle-shake feel) */
+.floaties{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.floatie{position:absolute;display:block;fill:currentColor;opacity:.7;will-change:transform}
+.floatie use{fill:currentColor}
+
 /* ===================== Header ===================== */
 .site-header{
   position:sticky;top:0;z-index:50;
