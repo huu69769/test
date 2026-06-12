@@ -226,11 +226,11 @@ body::before{
 .shot:hover{transform:translateY(-5px);box-shadow:0 18px 30px -14px rgba(74,48,30,.6)}
 .shot svg{width:100%;height:auto;display:block}
 .shot img{width:100%;display:block;aspect-ratio:16/11;object-fit:cover;object-position:center top;background:#F4F1EC}
-/* tall portrait thumbnail (e.g. posters) */
-.shot-tall img{aspect-ratio:5/7;object-position:center top}
-/* wide horizontal shot (e.g. book spread) — spans full row, real ratio so it's fully visible */
+/* tall portrait thumbnail (posters) — show the WHOLE image, no cropping */
+.shot-tall img{aspect-ratio:5/7;object-fit:contain;object-position:center;background:#fff}
+/* wide horizontal shot (book spread) — spans full row, whole image visible */
 .shot-wide{grid-column:1 / -1}
-.shot-wide img{aspect-ratio:5315/2480;object-fit:cover;object-position:center}
+.shot-wide img{aspect-ratio:5315/2480;object-fit:contain;object-position:center;background:#F4F1EC}
 .shot .ac{fill:var(--ui,var(--coral))}
 .shot .acs{stroke:var(--ui,var(--coral))}
 .shot figcaption{font-size:.8rem;font-weight:700;color:var(--ink-soft);padding:.55rem .8rem .65rem}
