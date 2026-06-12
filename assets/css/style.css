@@ -226,9 +226,11 @@ body::before{
 .shot:hover{transform:translateY(-5px);box-shadow:0 18px 30px -14px rgba(74,48,30,.6)}
 .shot svg{width:100%;height:auto;display:block}
 .shot img{width:100%;display:block;aspect-ratio:16/11;object-fit:cover;object-position:center top;background:#F4F1EC}
-/* wide horizontal shot (e.g. book cover spread) — spans full row */
+/* tall portrait thumbnail (e.g. posters) */
+.shot-tall img{aspect-ratio:5/7;object-position:center top}
+/* wide horizontal shot (e.g. book spread) — spans full row, real ratio so it's fully visible */
 .shot-wide{grid-column:1 / -1}
-.shot-wide img{aspect-ratio:1000/360;object-position:center}
+.shot-wide img{aspect-ratio:5315/2480;object-fit:cover;object-position:center}
 .shot .ac{fill:var(--ui,var(--coral))}
 .shot .acs{stroke:var(--ui,var(--coral))}
 .shot figcaption{font-size:.8rem;font-weight:700;color:var(--ink-soft);padding:.55rem .8rem .65rem}
@@ -239,10 +241,11 @@ body::before{
 .lightbox{position:fixed;inset:0;z-index:100;display:none;place-items:center;padding:5vw;
   background:rgba(43,38,34,.9);backdrop-filter:blur(5px)}
 .lightbox.open{display:grid}
-.lb-stage{max-width:1080px;width:100%;background:#fff;border:2.5px solid var(--ink);border-radius:18px;
+.lb-stage{max-width:min(1080px,94vw);width:auto;background:#fff;border:2.5px solid var(--ink);border-radius:18px;
   overflow:hidden;box-shadow:0 30px 70px -20px rgba(0,0,0,.7);animation:lbIn .25s ease}
 @keyframes lbIn{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}
-.lb-stage .lb-media svg,.lb-stage .lb-media img{width:100%;display:block}
+.lb-stage .lb-media svg,.lb-stage .lb-media img{display:block;margin:0 auto;
+  max-width:100%;max-height:82vh;width:auto;height:auto}
 .lb-stage .ac{fill:var(--ui,var(--coral))}
 .lb-stage .acs{stroke:var(--ui,var(--coral))}
 .lb-cap{text-align:center;font-weight:700;padding:.8rem;color:var(--ink)}
