@@ -285,8 +285,13 @@ body::before{
 @keyframes spin{to{transform:rotate(360deg)}}
 .about-name{font-size:1.5rem;font-weight:900}
 .about-name small{font-size:.7rem;color:var(--ink-soft);font-weight:500}
-.about-role{display:inline-block;font-weight:700;color:var(--coral-dk);margin:.2rem 0 1rem;
-  background:var(--cream-2);padding:.2rem .9rem;border-radius:999px}
+.about-cv{display:inline-flex;align-items:center;gap:.5rem;margin:.5rem 0 1.1rem;
+  font-family:var(--f-head);font-weight:700;font-size:.95rem;
+  padding:.62rem 1.3rem;border-radius:999px;border:2.5px solid var(--ink);
+  background:var(--coral);color:#fff;box-shadow:3px 3px 0 var(--ink);
+  transition:transform .18s ease, box-shadow .18s ease}
+.about-cv:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink)}
+.about-cv svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2}
 .about-bio{font-size:.95rem;color:var(--ink-soft);text-align:left}
 .about-likes{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-top:1.2rem}
 .about-likes li{font-size:.8rem;font-weight:700;background:var(--cream-2);padding:.3rem .8rem;
