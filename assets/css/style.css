@@ -228,9 +228,10 @@ body::before{
 .shot img{width:100%;display:block;aspect-ratio:16/11;object-fit:cover;object-position:center top;background:#F4F1EC}
 /* tall portrait thumbnail (posters) — each keeps its own ratio: full image, no white bars, no crop */
 .shot-tall{align-self:start}
-.shot-tall img{aspect-ratio:auto;height:auto;object-fit:fill;background:#fff}
-/* very tall web-page screenshot: thumbnail shows the top, click to view full length */
-.shot-tall.shot-web img{aspect-ratio:5/7;height:auto;object-fit:cover;object-position:top center}
+/* all portrait thumbs share the same frame (パッケージ = 2:3); whole image shown, top-aligned */
+.shot-tall img{aspect-ratio:2/3;height:auto;object-fit:contain;object-position:top center;background:#fff}
+/* very tall web-page screenshot: fill the frame (top shown), click for full length */
+.shot-tall.shot-web img{object-fit:cover}
 /* wide horizontal shot (book spread) — spans full row, whole image visible */
 .shot-wide{grid-column:1 / -1}
 .shot-wide img{aspect-ratio:5315/2480;object-fit:contain;object-position:center;background:#F4F1EC}
