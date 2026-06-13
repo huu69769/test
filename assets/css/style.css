@@ -320,10 +320,9 @@ body::before{
 .dd-squiggle2{width:120px;height:24px;bottom:6%;right:10%;color:var(--teal)}
 .dd-star2 use{fill:inherit}
 .contact-cards{display:flex;gap:1.6rem;justify-content:center;flex-wrap:wrap;max-width:760px;margin:0 auto}
-.contact-card{flex:1 1 300px;max-width:420px;display:flex;flex-direction:column;align-items:center;gap:.3rem;
-  background:#fff;border:2.5px solid var(--ink);border-radius:var(--radius);padding:2rem 1.6rem;
-  box-shadow:6px 7px 0 var(--ink);transition:transform .2s,box-shadow .2s}
-.contact-card:hover{transform:translate(-3px,-4px);box-shadow:10px 12px 0 var(--ink)}
+.contact-card{flex:0 1 340px;max-width:340px;display:flex;flex-direction:column;align-items:center;gap:.3rem;
+  background:#fff;border:2.5px solid var(--ink);border-radius:var(--radius);padding:1.8rem 1.5rem;
+  box-shadow:6px 7px 0 var(--ink)}
 .cc-ic{width:64px;height:64px;display:grid;place-items:center;font-size:1.8rem;border-radius:50%;
   background:var(--cc);border:2.5px solid var(--ink);margin-bottom:.4rem}
 .cc-label{font-size:.8rem;font-weight:700;color:var(--ink-soft);letter-spacing:.05em}
