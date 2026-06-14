@@ -272,6 +272,25 @@ body::before{
 .illust-art svg{position:absolute;width:40px;height:40px;top:12%;right:14%;color:#fff;opacity:.85;fill:#fff;stroke:none}
 .illust-art svg use{fill:inherit;stroke:none}
 .illust-cap{font-family:var(--f-head);font-weight:700;font-size:.95rem;padding:.85rem 1rem;text-align:center}
+.illust-cap small{font-weight:500;font-size:.78rem;color:var(--ink-soft)}
+
+/* A4横向きイラスト枠（297 × 210 mm の等比＝横長フレーム） */
+.grid-illust-wide{grid-template-columns:repeat(2,1fr);margin-top:1.6rem}
+.illust-photo{aspect-ratio:297/210;overflow:hidden;
+  background:linear-gradient(140deg,#FFE7D8,#FFD3C0)}
+.illust-photo img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* 5作目：ホバー／フォーカスで裏返るフリップカード（表＋裏で2枚） */
+.illust-flip{perspective:1400px}
+.illust-flip .flip-inner{position:relative;transform-style:preserve-3d;
+  transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.illust-flip:hover .flip-inner,
+.illust-flip:focus-visible .flip-inner,
+.illust-flip:focus-within .flip-inner{transform:rotateY(180deg)}
+.illust-flip .flip-face{position:absolute;inset:0;overflow:hidden;
+  backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.illust-flip .flip-back{transform:rotateY(180deg);
+  background:linear-gradient(140deg,#D7C4F2,#9B7BE0)}
 
 /* ===================== About ===================== */
 .about{background:linear-gradient(180deg,transparent, rgba(255,201,60,.07));border-radius:40px}
@@ -360,7 +379,7 @@ body::before{
   .nav-toggle.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
   .nav-toggle.open span:nth-child(2){opacity:0}
   .nav-toggle.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
-  .grid-3,.grid-illust{grid-template-columns:1fr}
+  .grid-3,.grid-illust,.grid-illust-wide{grid-template-columns:1fr}
   .hero-stats li{min-width:120px}
   .dd-circle1,.dd-heart1{display:none}
 }
@@ -369,4 +388,5 @@ body::before{
   *{animation:none !important;scroll-behavior:auto}
   .reveal{opacity:1;transform:none;transition:none}
   .hero-title .hl-name{opacity:1}
+  .illust-flip .flip-inner{transition:none}
 }

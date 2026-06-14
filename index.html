@@ -240,17 +240,29 @@
         <div class="illust-art"><span class="emoji">🍓</span></div>
         <p class="illust-cap">いちごの朝 / Berry Morning</p>
       </article>
-      <article class="card illust-card" data-cat="illust" tabindex="0" style="--c1:#B9D2F7;--c2:#4FA8E0">
-        <div class="illust-art"><span class="emoji">🌙</span></div>
-        <p class="illust-cap">おやすみ / Goodnight</p>
+    </div>
+
+    <!-- A4横向きイラスト（297 × 210 mm の等比＝横長フレーム） -->
+    <div class="grid grid-illust-wide">
+      <!-- 4作目：横長イラスト 1枚 -->
+      <article class="card illust-card illust-card--photo" data-cat="illust" tabindex="0">
+        <div class="illust-photo">
+          <img src="assets/img/illust-a4-1.jpg" alt="A4横向きイラスト 01" loading="lazy" />
+        </div>
+        <p class="illust-cap">作品タイトル 04</p>
       </article>
-      <article class="card illust-card" data-cat="illust" tabindex="0" style="--c1:#FFE08A;--c2:#FFC93C">
-        <div class="illust-art"><span class="emoji">🐤</span></div>
-        <p class="illust-cap">はじめの一歩 / First Step</p>
-      </article>
-      <article class="card illust-card" data-cat="illust" tabindex="0" style="--c1:#D7C4F2;--c2:#9B7BE0">
-        <div class="illust-art"><span class="emoji">🎈</span></div>
-        <p class="illust-cap">ふうせん / Balloon</p>
+
+      <!-- 5作目：ホバーで裏返るフリップカード（表＋裏で2枚） -->
+      <article class="card illust-card illust-card--photo illust-flip" data-cat="illust" tabindex="0" aria-label="ホバーまたはフォーカスで裏面のイラストを表示">
+        <div class="illust-photo flip-inner">
+          <div class="flip-face flip-front">
+            <img src="assets/img/illust-a4-2.jpg" alt="A4横向きイラスト 02（表）" loading="lazy" />
+          </div>
+          <div class="flip-face flip-back">
+            <img src="assets/img/illust-a4-3.jpg" alt="A4横向きイラスト 02（裏）" loading="lazy" />
+          </div>
+        </div>
+        <p class="illust-cap">作品タイトル 05 <small>（ホバーで裏面）</small></p>
       </article>
     </div>
   </div>
