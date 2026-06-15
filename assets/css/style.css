@@ -274,9 +274,9 @@ body::before{
 .illust-cap{font-family:var(--f-head);font-weight:700;font-size:.95rem;padding:.85rem 1rem;text-align:center}
 .illust-cap small{font-weight:500;font-size:.78rem;color:var(--ink-soft)}
 
-/* A4横向きイラスト枠（297 × 210 mm の等比＝横長フレーム） */
-.grid-illust-wide{grid-template-columns:repeat(2,1fr);margin-top:1.6rem}
-.illust-photo{aspect-ratio:297/210;overflow:hidden;
+/* A4横向きイラスト（297 × 210 mm の等比）— 枠なし・上下に大きく並べる */
+.grid-illust-wide{grid-template-columns:1fr;gap:2.2rem;margin-top:1.6rem;max-width:880px;margin-inline:auto}
+.illust-photo{aspect-ratio:297/210;overflow:hidden;border-radius:16px;
   background:linear-gradient(140deg,#FFE7D8,#FFD3C0)}
 .illust-photo img{width:100%;height:100%;object-fit:cover;display:block}
 
@@ -289,7 +289,7 @@ body::before{
 .illust-flip:hover .flip-inner,
 .illust-flip:focus-visible .flip-inner,
 .illust-flip:focus-within .flip-inner{transform:rotateY(180deg)}
-.illust-flip .flip-face{position:absolute;inset:0;overflow:hidden;
+.illust-flip .flip-face{position:absolute;inset:0;overflow:hidden;border-radius:16px;
   backface-visibility:hidden;-webkit-backface-visibility:hidden}
 .illust-flip .flip-face img{width:100%;height:100%;object-fit:cover;display:block}
 .illust-flip .flip-front{background:linear-gradient(140deg,#FFE7D8,#FFD3C0)}
