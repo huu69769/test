@@ -126,11 +126,15 @@
   if (blobs.length && !prefersReduce) {
     var blobLayer = document.querySelector(".blobs");
     var heroEl = document.querySelector(".hero");
-    var items = Array.prototype.map.call(blobs, function (el) {
+    var items = Array.prototype.map.call(blobs, function (el, i) {
       return {
         el: el,
-        sx: parseFloat(el.getAttribute("data-sx")) || 0, // horizontal drift per px scrolled
-        sy: parseFloat(el.getAttribute("data-sy")) || 0   // vertical drift per px scrolled
+        sx: parseFloat(el.getAttribute("data-sx")) || 0,    // horizontal drift per px scrolled
+        sy: parseFloat(el.getAttribute("data-sy")) || 0,    // vertical drift per px scrolled
+        tilt: parseFloat(el.getAttribute("data-tilt")) || 0, // resting tilt (deg)
+        rot: parseFloat(el.getAttribute("data-rot")) || 0,   // spin per px scrolled (deg)
+        amp: parseFloat(el.getAttribute("data-amp")) || 0,   // wobble amplitude (px)
+        ph: i * 1.1                                          // phase offset so each curves differently
       };
     });
     var ticking = false;
@@ -141,9 +145,13 @@
       if (blobLayer) blobLayer.classList.toggle("show", y > threshold);
       for (var i = 0; i < items.length; i++) {
         var it = items[i];
+        // sine/cosine wobble bends the trajectory so it's not a straight line
+        var x = y * it.sx + it.amp * Math.sin(y * 0.004 + it.ph);
+        var ty = y * it.sy + it.amp * 0.55 * Math.cos(y * 0.0034 + it.ph);
+        var deg = it.tilt + y * it.rot; // starts tilted, then spins as you scroll
         // transform is a pure function of scroll position → deterministic, never reverts
         it.el.style.transform =
-          "translate3d(" + (y * it.sx).toFixed(1) + "px," + (y * it.sy).toFixed(1) + "px,0)";
+          "translate3d(" + x.toFixed(1) + "px," + ty.toFixed(1) + "px,0) rotate(" + deg.toFixed(1) + "deg)";
       }
       ticking = false;
     }
