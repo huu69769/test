@@ -273,8 +273,13 @@ body::before{
 .lb-next{right:max(14px,3vw)}
 @media (max-width:520px){.lb-nav{width:44px;height:44px;font-size:1.3rem}.lb-close{width:42px;height:42px}}
 
-/* illustration cards */
-.illust-card{display:flex;flex-direction:column}
+/* illustration cards — UI/UXの .shot と同じ「細枠＋淡い影＋角丸」フレームに統一 */
+.illust-card{display:flex;flex-direction:column;background:#fff;
+  border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  box-shadow:0 10px 22px -14px rgba(74,48,30,.55);
+  transition:transform .22s ease, box-shadow .22s ease}
+.illust-card:hover,.illust-card:focus-visible{transform:translateY(-5px);
+  box-shadow:0 18px 30px -14px rgba(74,48,30,.6);outline:none}
 .illust-art{aspect-ratio:1;display:grid;place-items:center;position:relative;
   background:linear-gradient(140deg,var(--c1),var(--c2))}
 .illust-art .emoji{font-size:clamp(3rem,9vw,5rem);filter:drop-shadow(0 8px 10px rgba(0,0,0,.15))}
@@ -285,7 +290,7 @@ body::before{
 
 /* A4横向きイラスト（297 × 210 mm の等比）— 枠なし・上下に大きく並べる */
 .grid-illust-wide{grid-template-columns:1fr;gap:2.2rem;margin-top:1.6rem;max-width:880px;margin-inline:auto}
-.illust-photo{aspect-ratio:297/210;overflow:hidden;border-radius:16px;
+.illust-photo{aspect-ratio:297/210;overflow:hidden;
   background:linear-gradient(140deg,#FFE7D8,#FFD3C0)}
 .illust-photo img{width:100%;height:100%;object-fit:cover;display:block}
 
@@ -298,7 +303,7 @@ body::before{
 .illust-flip:hover .flip-inner,
 .illust-flip:focus-visible .flip-inner,
 .illust-flip:focus-within .flip-inner{transform:rotateY(180deg)}
-.illust-flip .flip-face{position:absolute;inset:0;overflow:hidden;border-radius:16px;
+.illust-flip .flip-face{position:absolute;inset:0;overflow:hidden;
   backface-visibility:hidden;-webkit-backface-visibility:hidden}
 .illust-flip .flip-face img{width:100%;height:100%;object-fit:cover;display:block}
 .illust-flip .flip-front{background:linear-gradient(140deg,#FFE7D8,#FFD3C0)}
