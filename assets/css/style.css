@@ -297,6 +297,12 @@ body::before{
   background:linear-gradient(140deg,#FFE7D8,#FFD3C0)}
 .illust-photo img{width:100%;height:100%;object-fit:cover;display:block}
 
+/* 縦長イラスト（原寸 1640 × 2360 px の等比） */
+.grid-illust-portrait{margin-top:1.6rem}
+.illust-portrait{aspect-ratio:1640/2360;overflow:hidden;
+  background:linear-gradient(140deg,#FFE7D8,#FFD3C0)}
+.illust-portrait img{width:100%;height:100%;object-fit:cover;display:block}
+
 /* 5作目：ホバー／フォーカスで裏返るフリップカード（表＝2／裏＝3）
    ※ flip-inner には overflow を付けない（付けると preserve-3d が flat に潰れ、
      裏返らず表(2)のミラーが見えてしまう）。裁剪と背景は各面に持たせる。 */
