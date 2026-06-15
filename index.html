@@ -21,6 +21,16 @@
 </head>
 <body>
 
+<!-- ===================== Floating colour blocks (scroll parallax) ===================== -->
+<div class="blobs" aria-hidden="true">
+  <span class="blob" style="--bg:var(--yellow);top:-6vh;left:-4vw;width:clamp(220px,26vw,400px);height:clamp(220px,26vw,400px)" data-sx="0.02" data-sy="0.12"></span>
+  <span class="blob" style="--bg:var(--teal);top:8vh;left:74vw;width:clamp(200px,24vw,360px);height:clamp(200px,24vw,360px)" data-sx="-0.04" data-sy="-0.16"></span>
+  <span class="blob" style="--bg:var(--pink);top:46vh;left:-8vw;width:clamp(240px,28vw,420px);height:clamp(240px,28vw,420px)" data-sx="0.05" data-sy="0.20"></span>
+  <span class="blob" style="--bg:var(--blue);top:62vh;left:68vw;width:clamp(200px,22vw,340px);height:clamp(200px,22vw,340px)" data-sx="-0.03" data-sy="-0.13"></span>
+  <span class="blob" style="--bg:var(--purple);top:80vh;left:14vw;width:clamp(220px,24vw,380px);height:clamp(220px,24vw,380px)" data-sx="0.04" data-sy="-0.22"></span>
+  <span class="blob" style="--bg:var(--coral);top:34vh;left:40vw;width:clamp(180px,20vw,320px);height:clamp(180px,20vw,320px)" data-sx="-0.05" data-sy="0.17"></span>
+</div>
+
 <!-- ===================== Decorative doodles (SVG sprite) ===================== -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
@@ -111,8 +121,6 @@
 
 <!-- ===================== Works ===================== -->
 <section class="section works" id="works">
-  <svg class="floatie" style="top:1.5%;left:3%;width:50px;color:var(--yellow)" data-f="1" aria-hidden="true"><use href="#d-star-fill"/></svg>
-  <svg class="floatie" style="top:46%;left:95%;width:44px;color:var(--teal)" data-f="0.8" aria-hidden="true"><use href="#d-star-fill"/></svg>
   <div class="section-head">
     <p class="eyebrow"><svg class="ic"><use href="#d-spark"/></svg> Works</p>
     <h2 class="section-title"><span class="ul">作品</span>一覧</h2>
@@ -262,7 +270,6 @@
 
 <!-- ===================== About ===================== -->
 <section class="section about" id="about">
-  <svg class="floatie" style="top:6%;left:93%;width:56px;color:var(--pink)" data-f="1" aria-hidden="true"><use href="#d-star-fill"/></svg>
   <div class="section-head">
     <p class="eyebrow"><svg class="ic"><use href="#d-heart"/></svg> About</p>
     <h2 class="section-title">私に<span class="ul">ついて</span></h2>
@@ -327,7 +334,6 @@
 
 <!-- ===================== Contact ===================== -->
 <section class="section contact" id="contact">
-  <svg class="floatie" style="top:14%;left:5%;width:46px;color:var(--coral)" data-f="0.9" aria-hidden="true"><use href="#d-star-fill"/></svg>
   <div class="contact-doodles" aria-hidden="true">
     <svg class="dd dd-star2"><use href="#d-star"/></svg>
     <svg class="dd dd-spark2"><use href="#d-spark"/></svg>

@@ -56,6 +56,13 @@ body::before{
   background-size:26px 26px;
 }
 
+/* Big floating colour blocks — drift on scroll (parallax), stay where they land.
+   Fixed viewport layer, behind all content. Driven by main.js (translate = scrollY × speed). */
+.blobs{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.blob{position:absolute;display:block;background:var(--bg);opacity:.16;
+  border-radius:48% 52% 46% 54% / 52% 46% 54% 48%;
+  filter:blur(2px);will-change:transform}
+
 /* solid stars pinned in place; gently shake on scroll, settle when idle */
 .floatie{position:absolute;z-index:-1;display:block;fill:currentColor;opacity:.85;
   pointer-events:none;will-change:transform}

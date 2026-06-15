@@ -118,48 +118,38 @@
     sections.forEach(function (s) { spy.observe(s); });
   }
 
-  /* ---- Pinned stars: shake when scrolling, spring back to rest when idle ---- */
-  var floaties = document.querySelectorAll(".floatie");
+  /* ---- Floating colour blocks: scroll-tied parallax (move while scrolling,
+         stay put when scrolling stops, no spring-back) ---- */
+  var blobs = document.querySelectorAll(".blob");
   var prefersReduce =
     window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (floaties.length && !prefersReduce) {
-    var stars = Array.prototype.map.call(floaties, function (el, i) {
-      var f = parseFloat(el.getAttribute("data-f")) || 1;
+  if (blobs.length && !prefersReduce) {
+    var items = Array.prototype.map.call(blobs, function (el) {
       return {
         el: el,
-        push: (i % 2 ? 1 : -1) * 0.16 * f, // scroll shoves it (alternating direction)
-        k: 0.05,        // spring stiffness — returns to rest
-        damp: 0.9,      // friction — settles smoothly
-        off: 0,
-        vy: 0,
-        idle: true
+        sx: parseFloat(el.getAttribute("data-sx")) || 0, // horizontal drift per px scrolled
+        sy: parseFloat(el.getAttribute("data-sy")) || 0   // vertical drift per px scrolled
       };
     });
-    var last = window.scrollY || window.pageYOffset;
-    function frame() {
-      var s = window.scrollY || window.pageYOffset;
-      var d = s - last;
-      last = s;
-      for (var i = 0; i < stars.length; i++) {
-        var it = stars[i];
-        it.vy += d * it.push;       // pushed by scroll
-        it.vy += -it.off * it.k;    // spring back to fixed spot
-        it.vy *= it.damp;           // friction
-        it.off += it.vy;
-        if (it.off > 16) it.off = 16;
-        else if (it.off < -16) it.off = -16;
-        // snap to rest so it truly stops
-        if (Math.abs(it.off) < 0.01 && Math.abs(it.vy) < 0.01) {
-          if (!it.idle) { it.off = 0; it.vy = 0; it.el.style.transform = ""; it.idle = true; }
-          continue;
-        }
-        it.idle = false;
+    var ticking = false;
+    function place() {
+      var y = window.scrollY || window.pageYOffset;
+      for (var i = 0; i < items.length; i++) {
+        var it = items[i];
+        // transform is a pure function of scroll position → deterministic, never reverts
         it.el.style.transform =
-          "translateY(" + (it.off * 0.5).toFixed(2) + "px) rotate(" + it.off.toFixed(2) + "deg)";
+          "translate3d(" + (y * it.sx).toFixed(1) + "px," + (y * it.sy).toFixed(1) + "px,0)";
       }
-      requestAnimationFrame(frame);
+      ticking = false;
     }
-    requestAnimationFrame(frame);
+    window.addEventListener(
+      "scroll",
+      function () {
+        if (!ticking) { window.requestAnimationFrame(place); ticking = true; }
+      },
+      { passive: true }
+    );
+    place();
   }
 
   /* ---- Lightbox: click a gallery shot to view it large ---- */
