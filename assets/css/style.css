@@ -280,6 +280,7 @@ body::before{
   transition:transform .22s ease, box-shadow .22s ease}
 .illust-card:hover,.illust-card:focus-visible{transform:translateY(-5px);
   box-shadow:0 18px 30px -14px rgba(74,48,30,.6);outline:none}
+.illust-card.zoomable{cursor:zoom-in}
 /* 3つの正方形（emoji）はもっと丸く、やわらかい角に */
 .illust-card:not(.illust-card--photo){border-radius:28px}
 .illust-art{aspect-ratio:1;display:grid;place-items:center;position:relative;

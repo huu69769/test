@@ -165,9 +165,14 @@
     place();
   }
 
-  /* ---- Lightbox: click a gallery shot to view it large ---- */
+  /* ---- Lightbox: click a gallery shot or illustration to view it large ---- */
   var shots = Array.prototype.slice.call(document.querySelectorAll(".gp-grid .shot"));
-  if (shots.length) {
+  // illustrations: the 3 squares + the single A4 (skip the flip card — it has its own flip)
+  var illustCards = Array.prototype.filter.call(
+    document.querySelectorAll(".illust-card:not(.illust-flip)"),
+    function (el) { return el.querySelector("img"); }
+  );
+  if (shots.length || illustCards.length) {
     var lb = document.createElement("div");
     lb.className = "lightbox";
     lb.setAttribute("aria-hidden", "true");
@@ -220,6 +225,16 @@
       function go() { openLb(grid, grid.indexOf(shot)); }
       shot.addEventListener("click", go);
       shot.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); }
+      });
+    });
+
+    illustCards.forEach(function (card) {
+      card.setAttribute("role", "button");
+      card.classList.add("zoomable");
+      function go() { openLb(illustCards, illustCards.indexOf(card)); }
+      card.addEventListener("click", go);
+      card.addEventListener("keydown", function (e) {
         if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); }
       });
     });
