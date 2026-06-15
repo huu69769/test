@@ -56,12 +56,14 @@ body::before{
   background-size:26px 26px;
 }
 
-/* Big floating colour blocks — drift on scroll (parallax), stay where they land.
-   Fixed viewport layer, behind all content. Driven by main.js (translate = scrollY × speed). */
-.blobs{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
-.blob{position:absolute;display:block;background:var(--bg);opacity:.16;
-  border-radius:48% 52% 46% 54% / 52% 46% 54% 48%;
-  filter:blur(2px);will-change:transform}
+/* Big floating star shapes — appear below the hero, drift on scroll (parallax),
+   stay where they land. Fixed viewport layer, behind all content.
+   Driven by main.js (translate = scrollY × speed; .show toggles past the hero). */
+.blobs{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;
+  opacity:0;transition:opacity .55s ease}
+.blobs.show{opacity:1}
+.blob{position:absolute;display:block;background:var(--bg);opacity:.22;will-change:transform;
+  clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
 
 /* solid stars pinned in place; gently shake on scroll, settle when idle */
 .floatie{position:absolute;z-index:-1;display:block;fill:currentColor;opacity:.85;

@@ -124,6 +124,8 @@
   var prefersReduce =
     window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (blobs.length && !prefersReduce) {
+    var blobLayer = document.querySelector(".blobs");
+    var heroEl = document.querySelector(".hero");
     var items = Array.prototype.map.call(blobs, function (el) {
       return {
         el: el,
@@ -134,6 +136,9 @@
     var ticking = false;
     function place() {
       var y = window.scrollY || window.pageYOffset;
+      // show the stars only once we've scrolled past (most of) the hero
+      var threshold = (heroEl ? heroEl.offsetHeight : window.innerHeight) * 0.55;
+      if (blobLayer) blobLayer.classList.toggle("show", y > threshold);
       for (var i = 0; i < items.length; i++) {
         var it = items[i];
         // transform is a pure function of scroll position → deterministic, never reverts
