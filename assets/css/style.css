@@ -295,6 +295,10 @@ body::before{
 .illust-flip .flip-front{background:linear-gradient(140deg,#FFE7D8,#FFD3C0)}
 .illust-flip .flip-back{transform:rotateY(180deg);
   background:linear-gradient(140deg,#D7C4F2,#9B7BE0)}
+.flip-hint{display:flex;align-items:center;justify-content:center;gap:.35rem;
+  font-family:var(--f-head);font-weight:700;font-size:.8rem;color:var(--ink-soft);
+  padding:.7rem 1rem .15rem}
+.flip-hint .ic{width:.95em;height:.95em;color:var(--coral);fill:var(--coral)}
 
 /* ===================== About ===================== */
 .about{background:linear-gradient(180deg,transparent, rgba(255,201,60,.07));border-radius:40px}
