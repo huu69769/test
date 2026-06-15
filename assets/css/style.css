@@ -305,7 +305,7 @@ body::before{
   transform-style:preserve-3d;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
 .illust-flip:hover .flip-inner,
 .illust-flip:focus-visible .flip-inner,
-.illust-flip:focus-within .flip-inner{transform:rotateY(180deg)}
+.illust-flip.flipped .flip-inner{transform:rotateY(180deg)}
 .illust-flip .flip-face{position:absolute;inset:0;overflow:hidden;
   backface-visibility:hidden;-webkit-backface-visibility:hidden}
 .illust-flip .flip-face img{width:100%;height:100%;object-fit:cover;display:block}

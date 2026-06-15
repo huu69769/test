@@ -270,6 +270,16 @@
     } catch (err) {}
   }
 
+  /* ---- Flip card: on touch (no hover), tap the illustration to flip / flip back ---- */
+  var touchOnly = window.matchMedia && window.matchMedia("(hover: none)").matches;
+  if (touchOnly) {
+    document.querySelectorAll(".illust-flip").forEach(function (card) {
+      card.addEventListener("click", function () {
+        card.classList.toggle("flipped");
+      });
+    });
+  }
+
   /* ---- Work cards: subtle 3D tilt that follows the cursor ---- */
   var tiltEls = document.querySelectorAll(".gp-grid .shot");
   var noTilt =
