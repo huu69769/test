@@ -235,4 +235,65 @@
       else if (e.key === "ArrowRight") step(1);
     });
   }
+
+  /* ---- Theme colour picker (recolours the whole site, remembers choice) ---- */
+  var dots = document.querySelectorAll(".tp-dot");
+  if (dots.length) {
+    var root = document.documentElement;
+    function applyTheme(c, d, btn) {
+      root.style.setProperty("--coral", c);
+      if (d) root.style.setProperty("--coral-dk", d);
+      dots.forEach(function (x) {
+        var on = x === btn;
+        x.classList.toggle("is-on", on);
+        x.setAttribute("aria-checked", String(on));
+      });
+    }
+    dots.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var c = btn.getAttribute("data-c");
+        var d = btn.getAttribute("data-d");
+        applyTheme(c, d, btn);
+        try { localStorage.setItem("themeColor", c + "|" + (d || "")); } catch (err) {}
+      });
+    });
+    // restore a previously chosen colour
+    try {
+      var saved = localStorage.getItem("themeColor");
+      if (saved) {
+        var parts = saved.split("|");
+        var match = Array.prototype.filter.call(dots, function (x) {
+          return x.getAttribute("data-c") === parts[0];
+        })[0];
+        if (match) applyTheme(parts[0], parts[1], match);
+      }
+    } catch (err) {}
+  }
+
+  /* ---- Work cards: subtle 3D tilt that follows the cursor ---- */
+  var tiltEls = document.querySelectorAll(".gp-grid .shot");
+  var noTilt =
+    window.matchMedia &&
+    (window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      window.matchMedia("(hover: none)").matches); // skip on touch devices
+  if (tiltEls.length && !noTilt) {
+    var MAX = 8; // degrees
+    tiltEls.forEach(function (el) {
+      el.addEventListener("pointerenter", function () {
+        el.style.transition = "transform .08s ease";
+      });
+      el.addEventListener("pointermove", function (e) {
+        var r = el.getBoundingClientRect();
+        var px = (e.clientX - r.left) / r.width - 0.5;
+        var py = (e.clientY - r.top) / r.height - 0.5;
+        el.style.transform =
+          "perspective(720px) rotateX(" + (-py * MAX).toFixed(2) + "deg) rotateY(" +
+          (px * MAX).toFixed(2) + "deg) scale(1.03)";
+      });
+      el.addEventListener("pointerleave", function () {
+        el.style.transition = ""; // back to the CSS default → smooth settle
+        el.style.transform = "";
+      });
+    });
+  }
 })();

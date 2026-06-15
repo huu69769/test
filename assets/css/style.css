@@ -389,6 +389,22 @@ body::before{
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease}
 .reveal.in{opacity:1;transform:none}
 
+/* ===================== Theme colour picker ===================== */
+.theme-pick{position:fixed;right:max(14px,2.4vw);bottom:max(14px,2.4vw);z-index:60;
+  display:flex;align-items:center;gap:.42rem;padding:.45rem .6rem;border-radius:999px;
+  background:rgba(255,251,245,.92);backdrop-filter:blur(8px);
+  border:2px solid var(--ink);box-shadow:3px 3px 0 var(--ink)}
+.tp-label{display:grid;place-items:center;color:var(--coral)}
+.tp-label .ic{width:18px;height:18px;fill:currentColor;stroke:none}
+.tp-dot{width:22px;height:22px;border-radius:50%;background:var(--tp);cursor:pointer;padding:0;
+  border:2px solid #fff;box-shadow:0 0 0 1.5px var(--line);transition:transform .15s ease}
+.tp-dot:hover{transform:scale(1.16)}
+.tp-dot.is-on{box-shadow:0 0 0 2.5px var(--ink);transform:scale(1.12)}
+@media (max-width:480px){.tp-dot{width:19px;height:19px}}
+
+/* ===================== Work-card 3D tilt (driven by main.js) ===================== */
+.shot{will-change:transform}
+
 /* ===================== Responsive ===================== */
 @media (max-width:880px){
   .grid-3,.grid-illust{grid-template-columns:repeat(2,1fr)}
