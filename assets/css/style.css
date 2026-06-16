@@ -325,6 +325,8 @@ body::before{
   padding:2rem;box-shadow:6px 7px 0 var(--ink);text-align:center}
 .avatar{position:relative;width:160px;margin:0 auto 1rem}
 .avatar>svg:first-child{border-radius:50%}
+.avatar-img{width:160px;height:160px;border-radius:50%;object-fit:cover;display:block;
+  background:#FFE9DF;border:3px solid #fff;box-shadow:0 6px 18px -8px rgba(74,48,30,.5)}
 .avatar-deco{position:absolute;inset:-12px;width:184px;height:184px;color:var(--coral);
   stroke:var(--coral);fill:none;z-index:-1;animation:spin 22s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
