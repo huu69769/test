@@ -8,6 +8,19 @@
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  /* ---- Back-to-top arrow: scroll to the very top ----
+     (the #top anchor is the sticky header, which is always pinned at the top,
+      so the browser thinks it's already in view and doesn't scroll — do it ourselves) */
+  var toTop = document.querySelector(".to-top");
+  if (toTop) {
+    toTop.addEventListener("click", function (e) {
+      e.preventDefault();
+      var reduce =
+        window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+    });
+  }
+
   /* ---- Hero name: typewriter reveal (left-to-right) ---- */
   var nameEl = document.querySelector(".hl-name");
   if (nameEl) {
